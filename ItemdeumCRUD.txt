@@ -1,0 +1,22 @@
+Create table Users (
+	id int primary key auto_increment,
+    nome varchar(255) not null,
+    cpf varchar(255) not null,
+    data_nascimento date  not null 
+);
+
+#Create
+insert into Users (nome, cpf, data_nascimento)
+values ("Luciano Paulus Silvas", "456.432.543-54", "1999-11-21"),
+("Paulo Gustavo Joana", "454.422.123-14", "1998-11-21");
+
+#Read
+Select * from Users;
+
+#Update
+UPDATE Users
+SET nome = "Paulo Gustavo Joano"
+WHERE id = 2;
+
+#Delete
+delete from Users where id = 1;

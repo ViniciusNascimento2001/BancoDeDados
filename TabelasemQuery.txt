@@ -1,0 +1,47 @@
+/*CREATE TABLE Provas (
+    id_aluno int not null,
+    id_materia int,
+    nota float(10,2),
+    data_da_prova date
+);
+CREATE TABLE aluno (
+	id int primary key auto_increment,
+    nome varchar(255) not null,
+    data_nascimento date not null
+);
+create table professor(
+	id int primary key auto_increment,
+    nome varchar(255) not null,
+    data_nascimento date not null
+);
+create table materia (
+	id int primary key auto_increment,
+    nome varchar(255) not null,
+    id_professor int not null
+);
+insert into aluno(nome, data_nascimento)
+VALUES ('Luciano Paulos', '2001-06-15'),
+('Hellen Neren', '2007-02-21'),
+('Caio Neymor', '2002-01-29');
+
+insert into professor(nome, data_nascimento)
+VALUES ('Roberto Carlos', '1980-05-05');
+
+insert into materia(nome, id_professor)
+VALUES ('Matematica', 1);
+
+insert into provas(id_aluno, id_materia, nota, data_da_prova)
+VALUES (1, 1, 5.5, '2024-11-22'),
+	   (2, 1, 8.5, '2024-11-22'),
+		(3, 1, 9.0, '2024-11-22');*/
+SELECT 
+	aluno.nome as NomeAluno,
+    materia.nome as NomeMateria,
+    provas.data_da_prova as 'Data',
+    provas.nota as Nota
+FROM
+	provas
+    INNER JOIN aluno ON  aluno.id = provas.id_aluno
+    INNER JOIN materia ON materia.id = provas.id_materia    
+#Para reiniciar
+#DROP TABLE aluno, materia, professor, provas;;
